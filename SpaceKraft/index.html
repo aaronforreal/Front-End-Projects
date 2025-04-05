@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geek-A-Hertz | Main</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">SpaceKraft.</a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cards">Go To Panel</a></li>
+            <li><a href="#paths">Select Path</a></li>
+            <li><a href="#rocket">Launch</a></li>
+        </ul>
+    </header>
+
+    <section class="banner" id="home">
+        <div class="imgBx">
+            <img src="img5.jpg" class="active">
+            <img src="img6.jpg">
+            <img src="img7.jpg">
+            <img src="img8.jpg">
+        </div>
+
+        <div class="contentBx">
+            <div class="active">
+                <h2>SpaceKraft.</h2>
+                <p>Our mission is to go Far And Beyond Horizons , to go where people have never been to , 
+                   to introduce the whole universe to mankind.
+                </p>
+                <a href="#cards">Go To Panel</a>
+            </div>
+            
+            <div>
+                <h2>SpaceKraft.</h2>
+                <p>Our mission is to go Far And Beyond Horizons , to go where people have never been to , 
+                    to introduce the whole universe to mankind.
+                </p>
+                <a href="#cards">Go To Panel</a>
+            </div>
+            
+            <div>
+                <h2>SpaceKraft.</h2>
+                <p>Our mission is to go Far And Beyond Horizons , to go where people have never been to , 
+                    to introduce the whole universe to mankind.
+                </p>
+                <a href="#cards">Go To Panel</a>
+            </div>
+            
+            <div>
+                <h2>SpaceKraft.</h2>
+                <p>Our mission is to go Far And Beyond Horizons , to go where people have never been to , 
+                    to introduce the whole universe to mankind.
+                </p>
+                <a href="#cards">Go To Panel</a>
+            </div>
+        </div>
+
+        <ul class="controls">
+            <li onclick="PrevSlide();PrevSlideText();"></li>
+            <li onclick="nextSlide();nextSlideText();"></li>
+        </ul>
+    </section>
+
+    <section id="cards">
+
+    <div class="container">
+
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h2>01</h2>
+                    <h3>Select Path</h3>
+                    <p>Selct the path for the spaceshuttle comfortably and easily by using this website.
+                    </p>
+                    <a href="#paths">Select</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h2>02</h2>
+                    <h3>Launch</h3>
+                    <p>Launch your spaceshuttle easily with our website and track it till it reaches the destination.
+                    </p>
+                    <a href="#rocket">Launch</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h2>03</h2>
+                    <h3>Land</h3>
+                    <p>Make an easy and safe landing of your spaceshuttle with the use of our website.
+                    </p>
+                    <a href="#heading">Land</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="paths">
+    <div class="planet planetEarth">
+        <h2>Earth</h2>
+        <div class="pathContainer">
+            <div class="loader"><span></span></div>
+            <div class="earth"></div>
+        </div>
+    </div>
+    
+    <div class="planet planetMars">
+        <h2>Mars</h2>
+        <div class="pathContainer">
+            <div class="loader"><span></span></div>
+            <div class="mars"></div>
+        </div>
+    </div>
+</section>
+
+<section id="rocket">
+
+<div class="pulse">
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+    <span style="--i:4;"></span>
+    <span style="--i:5;"></span>
+</div>
+
+<div class="rocket">
+    <img src="rocket.png">
+</div>
+
+</section>
+
+<section id="heading">
+
+    <h2 data-text="Landing...">Landing...</h2>
+
+</section>
+
+
+<script>
+    const imgBx = document.querySelector('.imgBx');
+    const slides = imgBx.getElementsByTagName('img');
+    var i = 0;
+
+    function nextSlide(){
+        slides[i].classList.remove('active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('active');
+    }
+    function PrevSlide(){
+        slides[i].classList.remove('active');
+        i = (i - 1 + slides.length) % slides.length;
+        slides[i].classList.add('active');
+    }
+
+    
+    const contentBx = document.querySelector('.contentBx');
+    const slidesText = contentBx.getElementsByTagName('div');
+    var j = 0;
+
+    function nextSlideText(){
+        slidesText[j].classList.remove('active');
+        j = (j + 1) % slidesText.length;
+        slidesText[j].classList.add('active');
+    }
+    function PrevSlideText(){
+        slidesText[j].classList.remove('active');
+        j = (j - 1 + slidesText.length) % slidesText.length;
+        slidesText[j].classList.add('active');
+    }
+
+    window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("sticky", window.scrollY > 0);
+		})
+</script>
+    
+</body>
+</html>
