@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+.load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+.loader {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: rotate(175deg);
+}
+
+.loader span {
+    position: absolute;
+    top: calc(12px * var(--i));
+    left: calc(12px * var(--i));
+    right: calc(12px * var(--i));
+    bottom: calc(12px * var(--i));
+    border: 10px solid #0b0b0b;
+    border-top: 10px solid #0f0;
+    border-left: 10px solid #0f0;
+    border-radius: 50%;
+    animation: animate 1s alternate ease-in-out infinite;
+    filter: hue-rotate(calc(60deg * var(--i)));
+    animation-delay: calc(-0.1s * var(--i));
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .box {
+    transform-style: preserve-3d;
+    animation: textAnimate 25s linear infinite;
+}
+
+@keyframes textAnimate {
+    0% {
+        transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+    }
+}
+
+.container .box span {
+    position: absolute;
+    color: #fff;
+    font-size: 3.5em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 0 10px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.5), transparent);
+    line-height: 0.76em;
+    transform-style: preserve-3d;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    transform: translate(-50%, -50%) rotateX(calc(var(--l) * 22.5deg)) translateZ(106px);
+}
+
+.container .box span i:nth-child(1) {
+    font-style: initial;
+    color: #ff246f;
+}
+
+.container .box span i:nth-child(2) {
+    color: #12b5ff;
+}
+
+.check {
+    width: 100%;
+    min-height: 100vh;
+}
