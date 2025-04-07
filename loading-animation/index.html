@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="myFunction()">
+
+    <section class="load" id="loader">
+        <div class="loader">
+            <span style="--i:0;"></span>
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+        </div>
+    </section>
+
+    <div id="myDiv">
+
+    <section class="hero">
+        <div class="container">
+            <div class="box">
+                <span style="--l:1"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:2"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:3"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:4"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:5"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:6"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:7"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:8"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:9"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:10"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:11"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:12"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:13"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:14"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:15"><i>CSS</i> is <i>A</i>wesome</span>
+                <span style="--l:16"><i>CSS</i> is <i>A</i>wesome</span>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+    <section class="check"></section>
+
+    <script>
+        var myVar;
+        
+        function myFunction() {
+          myVar = setTimeout(showPage, 3000);
+        }
+        
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }
+        </script>
+    
+</body>
+</html>
